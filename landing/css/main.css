@@ -1,0 +1,134 @@
+@import url(./normalize.css);
+@import url(./fonts.css);
+
+
+a {
+    text-decoration: none;
+}
+body{
+    font-family: 'ubuntu';
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    position: relative;
+}
+.container{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.alignment{
+    width: 1100px;
+    margin: 0 auto;
+}
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both
+}
+
+.sidebar{
+    position: absolute;
+    right: 100px;
+}
+
+.hello{
+    min-height: 650px;
+    background-image: url(../../img/background_sec1.png);
+    background-size: cover;
+    padding-top: 13px;
+}
+
+.hello__header{
+    text-align: justify;
+}
+
+.header__logo{
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo-svg{
+    width: 90px;
+}
+
+.header__navigation{
+    float: right;
+}
+
+.navigation__item{
+    display: inline-block;    
+    position: relative;
+    margin-left: 32px;
+}
+.navigation__order-link{
+    margin-left: 16px;
+}
+
+.navigation__item:not(:first-child):not(:last-child)::before{
+    content: "";
+    width: 3px; 
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -18px;
+    top: 9px;
+}
+
+.navigation__link{
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.order-link{
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    background: #e45028;
+    padding: 13px 16px;
+    border-radius: 2px;
+}
+
+.main{
+    width: 90%;
+    font-size: 0;
+    margin-bottom: 95px;
+}
+.column{
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.main__right{
+    text-align: left;
+}
+
+.drops-sec1{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-53%)
+}
+
+.title{
+    font-family: 'gagalinregular';
+    color: #f9b43b;
+    font-size: 72px;
+    font-weight: 400;
+}
+.we-do{
+    margin: 30px 0;
+    line-height: 1;
+}
+.natural-burgers{
+    font-family: 'lifehackmedium';
+    color: white;
+    font-size: 65px;
+    font-weight: 400;
+    margin: 0;
+    line-height: .9;
+}
