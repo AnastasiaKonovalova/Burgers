@@ -1,0 +1,89 @@
+.menu{
+    @include section-bg("../../img/menu-bg.jpg");
+    background-position: cover;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__title{
+    @extend %title;
+    color: white;
+    position: absolute;
+    top: rem(100px);
+    left: rem(100px);
+}
+
+.menu__acco{
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu__list{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu__item{
+    display: flex;
+    height: 100%;
+}   
+
+.menu__slider{
+    position: relative;
+    width: rem(80px);
+    height: 100%; 
+}
+
+.menu__name{
+    @extend %title;
+    color: white;
+    font-size: rem(40px);
+    white-space: nowrap;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translate(0, -50%);
+
+}
+
+.menu__content{
+    background: rgba(47, 50, 52, .9);
+    text-align: left;
+
+    /*width: 85%;*/
+    width: 0;
+    overflow: hidden;
+}
+
+.menu__item--active{
+
+    .menu__content{
+        width: rem(540px);
+        padding: rem(60px) rem(35px);
+    }
+}
+
+
+
+
+.menu-meat{
+    background: url(../../img/menu-meat-bg.jpg);
+}
+.menu-veg{
+    background: url(../../img/menu-veg-bg.jpg);
+}
+.menu-diet{
+    background: url(../../img/menu-diet-bg.jpg);
+}
+
+.menu__text{
+    @extend %text;
+}

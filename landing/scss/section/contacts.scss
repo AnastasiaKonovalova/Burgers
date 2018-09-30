@@ -1,0 +1,43 @@
+.contacts{
+    @include section-bg("../../img/map.jpg");
+}
+.contacts__footer{
+    position: absolute;
+    bottom: 0;
+    height: rem(60px);
+    width: 100%;
+    background-image: url(../../img/footer-bg.jpg);
+}
+
+.footer__container{
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer__column{
+    width: 50%;
+    text-align: left;
+}
+
+.footer__adress{
+    @extend %text;
+    font-style: normal;
+}
+.footer__tel{
+    font-size: rem(14px);
+    font-weight: 700;
+    color: $red;
+
+    &::before{
+        content: url(../../icons/phone.svg);
+        margin-right: rem(8px);
+    }
+}
+
+.footer__socials{
+    text-align: right;
+}
+
+.socials__icon{
+    width: rem(30px);
+}
