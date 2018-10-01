@@ -2,6 +2,13 @@
     position: fixed;
     right: rem(40px);
     top: rem(80px);
+
+    @include tablet{
+        display: none;
+    }
+    @include phone{
+        display: none;
+    }
 }
 
 .sidebar__item{
@@ -11,11 +18,12 @@
     &:hover .sidebar__link{
         display: block;
     }
+
+    &:not(:first-child) {
+        margin-top: rem(15px);
+    }    
 }
 
-.sidebar__item:not(:first-child) {
-    margin-top: rem(15px);
-}
 
 .sidebar__link{
     @include circle(rem(14px), transparent);

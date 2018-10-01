@@ -1,6 +1,7 @@
 .comments{
     min-height: rem(650px);
     height: 100vh;
+    background: $gray;
 }
 
 .comments__list{
@@ -22,12 +23,18 @@
             opacity: 1;
         }
     }
+
+    @include tablet{
+        width: 50%;
+        height: 25%;
+    }
 }
 
 @for $i from 1 through 8 {
     .comments__item--#{$i}{
         @extend %comments__item;
-        background-image: url(../../img/comments_ava#{$i}.png); 
+        background-image: url(../../img/comments_ava#{$i}.jpg); 
+        background-position: center center;
     }
 }
 
@@ -44,6 +51,11 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.3s;
+
+    @include tablet{
+        padding: 5%;
+        align-items: center;
+    }
 }
 
 .comments__name{
@@ -51,11 +63,44 @@
     font-size: rem(14px);
     color: white;
     margin-bottom: rem(30px);
+
+    @include tablet{
+        margin-bottom: 3%;
+    }
+    @include phone{
+        font-size: rem(24px);
+    }
 }
 .comments__text{
     @extend %text;
     text-align: left;
     margin-bottom: rem(17px);
+
+    @include tablet{
+        text-align: center;
+        margin-bottom: 3%;
+    }
+    @include phone{
+        height: 0;
+        overflow: hidden;
+    }
 }
 
+.comments__btn{
+    @include tablet{
+        padding: rem(10px) rem(13px);
+    }
+}
 
+.comments__btn-text--mob{
+    display: none;
+
+    @include phone{
+        display: block;
+    }
+}
+.comments__btn-text--desk{
+    @include phone{
+        display: none;
+    }
+}

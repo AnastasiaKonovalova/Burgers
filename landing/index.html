@@ -11,7 +11,7 @@
 <body>
     <div class="wrapper">
         <div class="maincontent">
-            <section class="hello">
+            <section class="hello" id="hello">
                 <div class="container">
                     <header class="hello__header header">
                         <div class="header__logo logo">
@@ -41,13 +41,15 @@
                         </nav>
                         <div class="header__btn">
                             <a class="btn-red" href="#order">Заказать</a>
+                            <button class="header__hamburger-menu">
+                                <div class="hamburger-menu"></div>
+                            </button>
                         </div>
                     </header>
 
                     <div class="hello__main main">
                         <div class="main__left column">
-                            <img class="burger-main" src="../img/burger_sec1.png" alt="Бургер">
-                            <img class="drops" src="../icons/drops.svg" alt="Кетчуп">
+                            <img class="hello__img" src="../img/burger_sec1.png" alt="Бургер">
                         </div>
 
                         <div class="main__right column">
@@ -61,47 +63,55 @@
                 </div>
             </section>
 
-            <section class="about">
-                <a name="about"></a>
-
+            <section class="about" id="about">
                 <div class="about__container container">
                     <h2 class="about__title">мы лучшие</h2>
                     <div class="about__main main">
                         <ul class="about__list">
                             <li class="about__item">
-                                <img class="about__icon" src="../icons/meat.svg" alt="Мясо">
-                                <span class="about__feature">100% свежее мясо</span>
-                                <p class="about__text">Драма представляет собой деструктивный цикл. 
-                                    Анапест представляет собой анапест. Ямб неравномерен.
-                                </p>
+                                <div class="about__icon">
+                                    <img class="" src="../icons/meat.svg" alt="Мясо">
+                                </div>
+                                <div class="about__content">
+                                    <span class="about__feature">100% свежее мясо</span>
+                                    <p class="about__text">Драма представляет собой деструктивный цикл. 
+                                        Анапест представляет собой анапест. Ямб неравномерен.
+                                    </p>
+                                </div>
                             </li>
                             <li class="about__item">
-                                <img class="about__icon" src="../icons/hand.svg" alt="Ручная сборка">
-                                <span class="about__feature">Ручная  сборка</span>
-                                <p class="about__text">Драма представляет собой деструктивный цикл. 
-                                    Анапест представляет собой анапест. Первое полустишие притягивает 
-                                    сюжетный реформаторский пафос.
-                                </p>
+                                <div class="about__icon">
+                                    <img class="about__icon-pic" src="../icons/hand.svg" alt="Ручная сборка">
+                                </div>
+                                <div class="about__content">
+                                    <span class="about__feature">Ручная  сборка</span>
+                                    <p class="about__text">Драма представляет собой деструктивный цикл. 
+                                        Анапест представляет собой анапест. Первое полустишие притягивает 
+                                        сюжетный реформаторский пафос.
+                                    </p>
+                                </div>
                             </li>
                             <li class="about__item">
-                                <img class="about__icon" src="../icons/natural.svg" alt="Ингредиенты">
-                                <span class="about__feature">Натуральные ингредиенты</span>
-                                <p class="about__text">Драма представляет собой деструктивный цикл. 
-                                    Анапест представляет собой анапест.
-                                </p>
+                                <div class="about__icon">
+                                        <img class="about__icon-pic" src="../icons/natural.svg" alt="Ингредиенты">
+                                    </div>
+                                <div class="about__content">
+                                    <span class="about__feature">Натуральные ингредиенты</span>
+                                    <p class="about__text">Драма представляет собой деструктивный цикл. 
+                                        Анапест представляет собой анапест.
+                                    </p>    
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <section class="burgers">
-                <a name="burgers"></a>
+            <section class="burgers" id="burgers">
 
             </section>
 
-            <section class="team">
-                <a name="team"></a>
+            <section class="team" id="team">
                 <div class="team__column">
                     <div class="team__content">
                         <h2 class="team__title">Команда</h2>
@@ -169,34 +179,16 @@
                 </div>
             </section>
 
-            <section class="menu">
-                <a name="menu"></a>
-                <h2 class="menu__title">Меню</h2>
-                <div class="menu__acco">
+            <section class="menu" id="menu">
+                <h2 class="menu__title menu__title--hide">Меню</h2>
+                <div class="menu__acco menu__acco--active">
                     <ul class="menu__list">
                         <li class="menu__item">
                             <div class="menu__slider menu-meat">
                                 <span class="menu__name">Для мясоедов</span>
                             </div>
                             <div class="menu__content">
-                                <p class="menu__text">Речевой акт редуцирует диалектический характер. 
-                                    Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. 
-                                    Лирический субъект начинает диссонансный анжамбеман. Наш современник стал 
-                                    особенно чутко относиться к слову, однако механизм сочленений неустойчив. 
-                                    Модальность высказывания, как справедливо считает И.Гальперин, пространственно 
-                                    выбирает метр.
-                                    Речевой акт редуцирует диалектический характер. Развивая эту тему, 
-                                    заимствование редуцирует конструктивный механизм сочленений. Лирический 
-                                    субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко 
-                                    относиться к слову.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="menu__item">
-                            <div class="menu__slider menu-veg">
-                                <span class="menu__name">Вегетарианское</span>
-                            </div>
-                            <div class="menu__content">
+                                <button class="menu__close-btn"></button>
                                 <p class="menu__text">Речевой акт редуцирует диалектический характер. 
                                     Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. 
                                     Лирический субъект начинает диссонансный анжамбеман. Наш современник стал 
@@ -211,10 +203,30 @@
                             </div>
                         </li>
                         <li class="menu__item menu__item--active">
+                            <div class="menu__slider menu-veg">
+                                <span class="menu__name">Вегетарианское</span>
+                            </div>
+                            <div class="menu__content">
+                                <button class="menu__close-btn"></button>
+                                <p class="menu__text">Речевой акт редуцирует диалектический характер. 
+                                    Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. 
+                                    Лирический субъект начинает диссонансный анжамбеман. Наш современник стал 
+                                    особенно чутко относиться к слову, однако механизм сочленений неустойчив. 
+                                    Модальность высказывания, как справедливо считает И.Гальперин, пространственно 
+                                    выбирает метр.
+                                    Речевой акт редуцирует диалектический характер. Развивая эту тему, 
+                                    заимствование редуцирует конструктивный механизм сочленений. Лирический 
+                                    субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко 
+                                    относиться к слову.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="menu__item">
                             <div class="menu__slider menu-diet">
                                 <span class="menu__name">Диетическое</span>
                             </div>
                             <div class="menu__content">
+                                <button class="menu__close-btn"></button>
                                 <p class="menu__text">Речевой акт редуцирует диалектический характер. 
                                     Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. 
                                     Лирический субъект начинает диссонансный анжамбеман. Наш современник стал 
@@ -233,8 +245,7 @@
 
             </section>
 
-            <section class="comments">
-                <a name="comments"></a>
+            <section class="comments" id="comments">
                     <ul class="comments__list">
                         <li class="comments__item comments__item--1">
                             <div class="comments__content">
@@ -244,7 +255,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -256,7 +270,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -268,7 +285,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -280,7 +300,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -292,7 +315,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -304,7 +330,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -316,7 +345,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -328,7 +360,10 @@
                                     что булочки могут быть такими мягкими, котлетка такой сочной, 
                                     а сыр таким расплавленным.
                                 </p>
-                                <button class="comments__btn btn-gray">Подробнее</button>
+                                <button class="comments__btn btn-gray">
+                                    <span class="comments__btn-text--desk">Подробнее</span> 
+                                    <span class="comments__btn-text--mob">Читать отзыв</span> 
+                                </button>
                             </div>
                         </li>
 
@@ -336,11 +371,10 @@
 
             </section>
 
-            <section class="order">
-                <a name="order"></a>
+            <section class="order" id="order">
                 <div class="order__container container">
                     <h2 class="order__title">Закажите доставку</h2>
-                    <form action="" class="form">
+                    <form action="" class="form main">
                         <div class="form__column">
                             <div class="form__row">
                                 <div class="form__block">
@@ -384,7 +418,7 @@
                                     <textarea class="form__textarea" name="" id="comment"></textarea>
                                 </div>
                             </div>
-                            <div class="form__row">
+                            <div class="form__row form__row--centered">
                                 <div class="radio__block">
                                     <input class="form__radio" type="radio" name="pay" id="change">
                                     <div class="radio__styled"></div>
@@ -396,12 +430,12 @@
                                     <label class="form__label radio__label" for="card">Оплата по карте</label>
                                 </div>
                             </div>
-                            <div class="form__row radio__block">
+                            <div class="form__row form__row--centered radio__block">
                                 <input class="form__checkbox" type="checkbox" id="nocall">
                                 <div class="checkbox__styled"></div>
                                 <label class="form__label checkbox__label" for="nocall">Не перезванивать</label>
                             </div>
-                            <div class="form__row">
+                            <div class="form__row form__row--centered">
                                 <button class="btn-red" type="submit">Заказать</button>
                                 <button class="btn-reset form__reset" type="reset">Очистить</button>
                             </div>
@@ -410,8 +444,7 @@
                 </div>
             </section>
 
-            <section class="contacts">
-                <a name="contacts"></a>
+            <section class="contacts" id="contacts">
                 <footer class="contacts__footer footer">
                     <div class="footer__container container">
                         <div class="footer__column">
@@ -420,10 +453,36 @@
                         </div>
                         <div class="footer__column">
                             <div class="footer__socials socials">
-                                <img src="../icons/vk.svg" alt="" class="socials__icon vk">
-                                <img src="../icons/fb.svg" alt="" class="socials__icon fb">
-                                <img src="../icons/inst.svg" alt="" class="socials__icon insta">
-                                <img src="../icons/twitter.svg" alt="" class="socials__icon tw">
+                                <ul class="socials__list">
+                                    <li class="socials__item">
+                                        <a href="#" class="socials__link">
+                                            <svg class="socials__icon vk">
+                                                <use xlink:href="../icons/sprite.svg#vk"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="#" class="socials__link">
+                                            <svg class="socials__icon fb">
+                                                <use xlink:href="../icons/sprite.svg#fb"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="#" class="socials__link">
+                                            <svg class="socials__icon inst">
+                                                <use xlink:href="../icons/sprite.svg#inst"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="#" class="socials__link">
+                                            <svg class="socials__icon tw">
+                                                <use xlink:href="../icons/sprite.svg#tw"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -434,14 +493,30 @@
 
     <aside class="sidebar">
         <ul class="sidebar__list">
-            <li class="sidebar__item sidebar__item--active"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
-            <li class="sidebar__item"><a class="sidebar__link" href=""></a></li>
+            <li class="sidebar__item sidebar__item--active">
+                <a class="sidebar__link" href="#hello"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#about"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#burgers"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#team"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#menu"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#comments"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#order"></a>
+            </li>
+            <li class="sidebar__item">
+                <a class="sidebar__link" href="#contacts"></a>
+            </li>
         </ul>
     </aside>
 

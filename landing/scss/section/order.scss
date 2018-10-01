@@ -1,23 +1,28 @@
 .order{
     @include section-bg("../../img/order-bg.jpg");
+    background-position: center center;
 }
 
 .order__container{
     justify-content: center;
 }
+
 .order__title{
     @extend %title;
     color: $orange;
     margin-bottom: rem(45px);
 }
+
 .form__label{
     @extend %text;
 }
+
 .form{
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+
 .form__column{
     width: 50%;
     text-align: left;
@@ -25,23 +30,42 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+
+    @include tablet{
+        width: 100%;
+    }
 }
+
 .form__column--right{
     margin-left: rem(20px);
+
+    @include tablet{
+        margin: 0;
+    }
 }
+
 .form__label{
     display: block;
     cursor: pointer;
     margin-bottom: rem(7px);
 }
+
 .form__row{
     display: flex;
     position: relative;
     overflow: hidden;
 }
+
+.form__row--centered{
+    @include phone{
+        justify-content: center;
+    }
+}
+
 .form__input{
     padding: rem(8px) rem(18px);
 }
+
 .form__input, .form__textarea{
     width: 100%;
     border: none;
@@ -60,6 +84,7 @@
         background: white;
     }
 }
+
 .form__textarea{
     min-height: rem(123px);
     padding: rem(8px);
@@ -80,6 +105,7 @@
     margin-bottom: rem(23px);
     margin-right: rem(20px);
 }
+
 .radio__label, .checkbox__label{
     margin-bottom: 0;
 }
@@ -138,6 +164,7 @@
     cursor: pointer;
     outline: none;
 }
+
 .form__reset{
     margin-left: rem(20px);
 }
