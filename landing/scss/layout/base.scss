@@ -13,6 +13,9 @@ html{
     @include phone{
         font-size: 13px;
     }
+    @include miniphone{
+        font-size: 12.5px;
+    }
 }
 
 *{

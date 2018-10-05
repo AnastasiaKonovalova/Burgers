@@ -23,24 +23,18 @@
     @include tablet{
         flex-direction: column;
     }
-    @include phone{
-        flex-direction: column;
-    }
 }
 .column{
     width: 50%;
     position: relative;
 
     @include tablet{
-        width: 100%;
-    }
-    @include phone{
-        width: 100%;
+        width: initial;
     }
 }
 
 %title{
-    font-family: 'gagalinregular';
+    font-family: 'gagalinregular', 'Arial', 'sans-serif';
     font-size: rem(72px);
     font-weight: 400;
     line-height: 1;
@@ -51,7 +45,7 @@
 }
 
 %undertitle{
-    font-family: 'gagalinregular';
+    font-family: 'gagalinregular', 'Arial', 'sans-serif';
     font-size: rem(14px);
     line-height: 1;
 }
@@ -71,7 +65,7 @@
     text-transform: uppercase;
     line-height: 1;
     text-align: center;
-    display: block;
+    // display: block;
     padding: rem(13px) rem(16px);
     border-radius: 3px;
     transition: 0.3s;

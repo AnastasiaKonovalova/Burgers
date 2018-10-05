@@ -17,13 +17,13 @@
                         <div class="header__logo logo">
                             <img class="logo-svg" src="../icons/logo.svg" alt="Лого">
                         </div>
-                        <nav class="header__navigation navigation">
+                        <nav class="header__navigation navigation" id="navigation">
                             <ul class="navigation__list">
                                 <li class="navigation__item">
                                     <a href="#about" class="navigation__link">О нас</a>
                                 </li>
                                 <li class="navigation__item">
-                                    <a href="#burgers" class="navigation__link">Бургеры</a>
+                                    <a href="#slider" class="navigation__link">Бургеры</a>
                                 </li>
                                 <li class="navigation__item">
                                     <a href="#team" class="navigation__link">Команда</a>
@@ -41,9 +41,14 @@
                         </nav>
                         <div class="header__btn">
                             <a class="btn-red" href="#order">Заказать</a>
-                            <button class="header__hamburger-menu">
-                                <div class="hamburger-menu"></div>
+                            <button class="header__hamburger-menu" id="hamburgerMenuBtn">
+                                <div class="hamburger-menu__open"></div>
                             </button>
+                            <button class="hamburger-menu__close-btn close-btn" id="navigationClose">
+                                <svg class="close-cross">
+                                    <use xlink:href="../icons/cross.svg#cross"></use>
+                                </svg>
+                            </button>            
                         </div>
                     </header>
 
@@ -107,8 +112,115 @@
                 </div>
             </section>
 
-            <section class="burgers" id="burgers">
-
+            <section class="slider" id="slider">
+                <div class="slider__arrow slider__arrow--left">
+                    <a class="slider__a--left" href="">
+                        <img class="arrow__left" src="../icons/arrow-scroll.svg" alt="">
+                    </a>
+                </div>
+                <div class="slider__main main">
+                    <div class="main__left column slider__left">
+                        <div class="slider__pic">
+                            <div class="slider__composition">
+                                <button class="composition__btn">
+                                    <svg class="composition__pic">
+                                        <use xlink:href="../icons/sprite.svg#burger"></use>
+                                    </svg>
+                                    <div class="composition__text">состав</div>
+                                </button>
+                                <div class="composition__ingredients ingredients show">
+                                    <button id="ingredientsClose" class="ingredients__close-btn close-btn">
+                                        <svg class="close-cross close-cross--red">
+                                            <use xlink:href="../icons/cross.svg#cross"></use>
+                                        </svg>
+                                    </button>
+                                    <ul class="ingredients__list">
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--beef">
+                                                    <use xlink:href="../icons/sprite.svg#beef"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Говядина</span>
+                                            </div>
+                                            <span class="ingredients__mass">300 г</span>
+                                        </li>
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--buns">
+                                                    <use xlink:href="../icons/sprite.svg#buns"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Булочки</span>            
+                                            </div>
+                                            <span class="ingredients__mass">100 г</span>
+                                        </li>
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--salad">
+                                                    <use xlink:href="../icons/sprite.svg#salad"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Зелень</span>
+                                            </div>
+                                            <span class="ingredients__mass">70 г</span>
+                                        </li>
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--sauce">
+                                                    <use xlink:href="../icons/sprite.svg#sauce"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Соус</span>
+                                            </div>
+                                            <span class="ingredients__mass">150 г</span>
+                                        </li>
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--veg">
+                                                    <use xlink:href="../icons/sprite.svg#veg"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Овощи</span>
+                                            </div>
+                                            <span class="ingredients__mass">200 г</span>
+                                        </li>
+                                        <li class="ingredients__item">
+                                            <div class="ingredients__img-text">
+                                                <svg class="ingredients__img ingredients__img--cheese">
+                                                    <use xlink:href="../icons/sprite.svg#cheese"></use>
+                                                </svg>
+                                                <span class="ingredients__text">Сыр</span>
+                                            </div>
+                                            <span class="ingredients__mass">80 г</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="slider__calories calories">
+                                <div class="calories__amount">1200</div>
+                                <svg class="calories__pic">
+                                    <use xlink:href="../icons/sprite.svg#kkal"></use>
+                                </svg>
+                                <div class="calories__text">калорий</div>
+                            </div>
+                            <img class="slider__img" src="../img/black_burger.png" alt="Черный бургер">
+                        </div>
+                    </div>
+                    <div class="main__right column">
+                        <h2 class="slider__title">Dark BEEF Burger</h2>
+                        <p class="slider__text">Ваш старый добрый знакомый, с рубленым 
+                            бифштексом из 100% говядины, тремя кусочками нежнейшего сыра 
+                            эмменталь, двумя помидорами, луком, салатом и соусом 
+                            гриль теперь с добавлением экзотического соуса чураско.
+                        </p>
+                        <div class="slider__order">
+                            <span class="slider__sum">500</span>
+                            <span class="slider__price">рублей</span>
+                            <a class="slider__order-btn btn-red" href="#order">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__arrow slider__arrow--right">
+                    <a class="slider__a--right" href="">
+                        <img class="arrow__right" src="../icons/arrow-scroll.svg" alt="">
+                    </a>        
+                </div>
             </section>
 
             <section class="team" id="team">
@@ -500,7 +612,7 @@
                 <a class="sidebar__link" href="#about"></a>
             </li>
             <li class="sidebar__item">
-                <a class="sidebar__link" href="#burgers"></a>
+                <a class="sidebar__link" href="#slider"></a>
             </li>
             <li class="sidebar__item">
                 <a class="sidebar__link" href="#team"></a>
@@ -519,6 +631,8 @@
             </li>
         </ul>
     </aside>
+
+    <script src="./js/all.js"></script>
 
 </body>
 </html>
