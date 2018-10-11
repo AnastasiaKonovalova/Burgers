@@ -132,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   .wrapper {
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -150,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   .maincontent {
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

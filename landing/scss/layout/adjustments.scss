@@ -6,6 +6,7 @@
     @include tablet{
         height: 100%;
         overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -20,6 +21,7 @@
     @include tablet{
         height: 100%;
         overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 

@@ -284,37 +284,31 @@ console.log(isMobile)
 console.log(isTablet)
 
 var onwheelFunction = function(e){
+    const deltaY = e.deltaY;
 
-    if(isDesktop){
-        const deltaY = e.deltaY;
-
-        if(deltaY < 0){
-            const direction = 'up';
-            changeClass(direction);
-        }else {
-            const direction = 'down';
-            changeClass(direction);
-        };
-    }
+    if(deltaY < 0){
+        const direction = 'up';
+        changeClass(direction);
+    }else {
+        const direction = 'down';
+        changeClass(direction);
+    };
 };
 
 function debounce(f, ms) {
+    let timer = null;
 
-    if(isDesktop){
-        let timer = null;
+    return function (...args) {
+        const onComplete = () => {
+            f.apply(this, args);
+            timer = null;
+        }
 
-        return function (...args) {
-            const onComplete = () => {
-                f.apply(this, args);
-                timer = null;
-            }
+        if (timer) {
+            clearTimeout(timer);
+        }
 
-            if (timer) {
-                clearTimeout(timer);
-            }
-
-            timer = setTimeout(onComplete, ms);
-        };
+        timer = setTimeout(onComplete, ms);
     };
 };
 
