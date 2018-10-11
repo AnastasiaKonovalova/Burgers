@@ -176,7 +176,7 @@ leftArrowEl.addEventListener('click', function(e){
 var mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile()
 const isTablet = mobileDetect.tablet()
-const isDesktop = isMobile === null || isTablet === null;
+const isDesktop = isMobile === null && isTablet === null;
 console.log('isDesktop', isDesktop);
 
 const sections = document.getElementsByTagName('section');
