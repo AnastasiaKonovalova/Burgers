@@ -173,6 +173,11 @@ leftArrowEl.addEventListener('click', function(e){
 
 // One page scroll!!! + Nav jump
 
+var mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile()
+const isTablet = mobileDetect.tablet()
+
+
 const sections = document.getElementsByTagName('section');
 const sectionsArray = [].slice.call(sections);
 
@@ -199,32 +204,34 @@ const redBtnLinksArray = [].slice.call(redBtnLinks);
 
 const allNavArray = [].concat(navLinksArray, sidebarLinksArray, redBtnLinksArray);
 
-for(i=0; i<allNavArray.length; i++){
-    allNavArray[i].addEventListener('click', function(e){
-        e.preventDefault();
-        var visibleSection = document.querySelector('.visible-section');
-        var currentSidebarItem = document.querySelector('.sidebar__item--active');
-    
-        visibleSection.classList.remove('visible-section');
-        currentSidebarItem.classList.remove('sidebar__item--active');
 
-        var ind = parseInt(e.currentTarget.dataset.sectionIndex);
-    
-        var nextSidebarLink = sidebarLinksArray.find(function(elem){
-            var newInd = ind+'';
-            return elem.dataset.sectionIndex === newInd;            
+if(isMobile === null || isTablet === null){
+        for(i=0; i<allNavArray.length; i++){
+        allNavArray[i].addEventListener('click', function(e){
+            e.preventDefault();
+            var visibleSection = document.querySelector('.visible-section');
+            var currentSidebarItem = document.querySelector('.sidebar__item--active');
+        
+            visibleSection.classList.remove('visible-section');
+            currentSidebarItem.classList.remove('sidebar__item--active');
+
+            var ind = parseInt(e.currentTarget.dataset.sectionIndex);
+        
+            var nextSidebarLink = sidebarLinksArray.find(function(elem){
+                var newInd = ind+'';
+                return elem.dataset.sectionIndex === newInd;            
+            });
+            var nextSidebarItem = nextSidebarLink.parentElement;
+
+            var nextVisibleSection = sectionsArray[ind];
+
+            nextVisibleSection.classList.add('visible-section');
+            nextSidebarItem.classList.add('sidebar__item--active');
+
+            transform(ind);
         });
-        var nextSidebarItem = nextSidebarLink.parentElement;
-
-        var nextVisibleSection = sectionsArray[ind];
-
-        nextVisibleSection.classList.add('visible-section');
-        nextSidebarItem.classList.add('sidebar__item--active');
-
-        transform(ind);
-    });
+    };
 };
-
 
 function transform(i){
     const newPosition = i * -100 +'%';
@@ -270,9 +277,6 @@ function changeClass(d){
     };
 };
 
-var mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile()
-const isTablet = mobileDetect.tablet()
 
 console.log(isMobile)
 console.log(isTablet)
