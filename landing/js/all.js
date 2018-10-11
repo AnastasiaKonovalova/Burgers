@@ -274,9 +274,12 @@ var mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile()
 const isTablet = mobileDetect.tablet()
 
+console.log(isMobile)
+console.log(isTablet)
+
 var onwheelFunction = function(e){
 
-    if(!isMobile || !isTablet){
+    if(isMobile === null || isTablet === null){
         const deltaY = e.deltaY;
 
         if(deltaY < 0){
@@ -291,21 +294,23 @@ var onwheelFunction = function(e){
 
 function debounce(f, ms) {
 
-    let timer = null;
+    if(isMobile === null || isTablet === null){
+        let timer = null;
 
-    return function (...args) {
-        const onComplete = () => {
-            f.apply(this, args);
-            timer = null;
-        }
+        return function (...args) {
+            const onComplete = () => {
+                f.apply(this, args);
+                timer = null;
+            }
 
-        if (timer) {
-            clearTimeout(timer);
-        }
+            if (timer) {
+                clearTimeout(timer);
+            }
 
-        timer = setTimeout(onComplete, ms);
+            timer = setTimeout(onComplete, ms);
+        };
     };
-}
+};
   
 document.onwheel = debounce(onwheelFunction, 70);
 
@@ -322,6 +327,7 @@ document.addEventListener('keydown', function(k){
 
 // // One page scroll by touch
 
+
 // var touchY;
 
 // document.addEventListener('touchstart', function(t){
@@ -331,25 +337,29 @@ document.addEventListener('keydown', function(k){
 // function touchend(t){
 //     var touchDeltaY = t.changedTouches[0].clientY - touchY;
 
-//     if(touchDeltaY < 0){
-//         const direction = 'down';
-//         changeClass(direction);
-//     }else {
-//         const direction = 'up';
-//         changeClass(direction);
+//     if(isMobile || isTablet){
+//         if(touchDeltaY < 0){
+//             const direction = 'down';
+//             changeClass(direction);
+//         }else {
+//             const direction = 'up';
+//             changeClass(direction);
+//         };
 //     };
-// }
+// };
 
 // function touchmove(t){
 //     var touchDeltaY = t.changedTouches[0].clientY - touchY;
 
-//     if(touchDeltaY < 0){
-//         const direction = 'down';
-//         changeClass(direction);
-//     }else {
-//         const direction = 'up';
-//         changeClass(direction);
+//     if(isMobile || isTablet){
+//         if(touchDeltaY < 0){
+//             const direction = 'down';
+//             changeClass(direction);
+//         }else {
+//             const direction = 'up';
+//             changeClass(direction);
+//         };
 //     };
-// }
+// };
 
 // document.addEventListener('touchmove', debounce(touchmove, 70))
