@@ -176,7 +176,8 @@ leftArrowEl.addEventListener('click', function(e){
 var mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile()
 const isTablet = mobileDetect.tablet()
-
+const isDesktop = isMobile === null || isTablet === null;
+console.log('isDesktop', isDesktop);
 
 const sections = document.getElementsByTagName('section');
 const sectionsArray = [].slice.call(sections);
@@ -205,7 +206,8 @@ const redBtnLinksArray = [].slice.call(redBtnLinks);
 const allNavArray = [].concat(navLinksArray, sidebarLinksArray, redBtnLinksArray);
 
 
-if(isMobile === null || isTablet === null){
+
+if(isDesktop){
         for(i=0; i<allNavArray.length; i++){
         allNavArray[i].addEventListener('click', function(e){
             e.preventDefault();
@@ -283,7 +285,7 @@ console.log(isTablet)
 
 var onwheelFunction = function(e){
 
-    if(isMobile === null || isTablet === null){
+    if(isDesktop){
         const deltaY = e.deltaY;
 
         if(deltaY < 0){
@@ -298,7 +300,7 @@ var onwheelFunction = function(e){
 
 function debounce(f, ms) {
 
-    if(isMobile === null || isTablet === null){
+    if(isDesktop){
         let timer = null;
 
         return function (...args) {
@@ -315,18 +317,22 @@ function debounce(f, ms) {
         };
     };
 };
-  
-document.onwheel = debounce(onwheelFunction, 70);
 
-document.addEventListener('keydown', function(k){
-    if(k.key === "ArrowDown"){
-        const dir = 'down';
-        changeClass(dir);
-    } else if(k.key === "ArrowUp"){
-        const dir = 'up';
-        changeClass(dir);
-    };
-});
+if(isDesktop){
+  
+    document.onwheel = debounce(onwheelFunction, 70);
+
+    document.addEventListener('keydown', function(k){
+        if(k.key === "ArrowDown"){
+            const dir = 'down';
+            changeClass(dir);
+        } else if(k.key === "ArrowUp"){
+            const dir = 'up';
+            changeClass(dir);
+        };
+    });
+
+}
 
 
 // // One page scroll by touch
