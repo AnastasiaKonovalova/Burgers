@@ -249,14 +249,28 @@ document.addEventListener('touchstart', function(t){
     touchY = t.touches[0].clientY;
 });
 
-document.addEventListener('touchend', function(t){
+function touchend(t){
     var touchDeltaY = t.changedTouches[0].clientY - touchY;
 
     if(touchDeltaY < 0){
-        const direction = 'up';
-        changeClass(direction);
-    }else {
         const direction = 'down';
         changeClass(direction);
+    }else {
+        const direction = 'up';
+        changeClass(direction);
     };
-});
+}
+
+document.addEventListener('touchend', debounce(touchend, 70))
+
+// document.addEventListener('touchend', function(t){
+//     var touchDeltaY = t.changedTouches[0].clientY - touchY;
+
+//     if(touchDeltaY < 0){
+//         const direction = 'down';
+//         changeClass(direction);
+//     }else {
+//         const direction = 'up';
+//         changeClass(direction);
+//     };
+// });
