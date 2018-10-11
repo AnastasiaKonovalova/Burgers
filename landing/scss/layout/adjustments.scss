@@ -1,9 +1,18 @@
 .wrapper{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.maincontent{
+    top: 0;
     position: relative;
     text-align: center;
+    transition: 0.7s;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
+
 .container{
     width: 95%;
     max-width: rem(940px);

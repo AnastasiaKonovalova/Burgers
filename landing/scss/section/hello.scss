@@ -21,12 +21,6 @@
     width: rem(90px);
 }
 
-.header__navigation{
-    @include tablet{
-        display: none;
-    }
-}
-
 .navigation__list{
     display: flex;
     justify-content: space-between;
@@ -139,24 +133,21 @@
 
 .hamburger-menu__close-btn{
     z-index: 2;
-    display:none;
     position: absolute;
     right: rem(35px);
-}
-
-.close-btn{
-    background: none;
     padding: 0;
-    cursor: pointer;
-    outline: none;
-    border: none;
+    display: none;
+
+    @include tablet{
+        display: block;
+    }
 }
 
 .close-cross{
     fill: rgba(white, .7);
     width: rem(20px);
     height: rem(20px);
-    transition: 0.3s;
+    transition: fill 0.3s;
 
     &:hover{
         fill: white;
@@ -215,4 +206,13 @@
 
 .scroll{
     margin-bottom: rem(30px);
+}
+
+.tablet-hide{
+    @include tablet{
+        display: none;
+    }
+}
+.display-none{
+    display: none;
 }

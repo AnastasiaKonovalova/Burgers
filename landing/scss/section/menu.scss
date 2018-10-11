@@ -25,12 +25,6 @@
     }
 }
 
-.menu__title--hide{
-    @include tablet{
-        display: none;
-    }
-}
-
 .menu__acco{
     width: 60%;
     height: 100%;
@@ -38,12 +32,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-}
-
-.menu__acco--active{
-    @include tablet{
-        width: 100%
-    }
 }
 
 .menu__list{
@@ -56,23 +44,8 @@
 .menu__item{
     display: flex;
     height: 100%;
+    position: relative;
 }   
-
-.menu__item--active{
-    .menu__content{
-        width: 100%;
-        padding: rem(60px) rem(35px);
-    }
-
-    @include phone{
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-}
 
 .menu__slider{
     position: relative;
@@ -80,6 +53,10 @@
     height: 100%; 
     background-repeat: no-repeat;
     background-size: cover;
+
+    &:hover .menu__name{
+        color: $orange;
+    }
 }
 
 .menu__name{
@@ -87,6 +64,7 @@
     color: white;
     font-size: rem(40px);
     white-space: nowrap;
+    transition: color 0.3s;
 
     position: absolute;
     left: 50%;
@@ -98,12 +76,25 @@
 .menu__content{
     background: rgba(47, 50, 52, .9);
     text-align: left;
-    width: 0;
+    // width: 0;
+    max-width: 0;
+    visibility: hidden;
+    opacity: 0;
+    // transform: scaleX(0);
+    // transform-origin: left;
     overflow: hidden;
+    
+
+    transition: visibility, opacity 0.3s linear;
+    // transition: max-width 0.5s linear;
+
 }
 .menu__close-btn{
+    position: absolute;
+    top: rem(30px);
+    right: rem(30px);
+    padding: 0;
     display: none;
-    background: none;
 }
 
 .menu-meat{
@@ -118,4 +109,47 @@
 
 .menu__text{
     @extend %text;
+    margin: rem(60px) rem(35px);
+}
+
+
+
+// .menu__title--hide{
+//     @include tablet{
+//         display: none;
+//     }
+// }
+
+.menu__acco--active{
+    @include tablet{
+        width: 100%
+    }
+}
+
+.menu__item--active{
+    .menu__content{
+        // width: 100%;
+        max-width: 540px;
+        visibility: visible;
+        opacity: 1;
+        // transition: max-width 5s linear;
+        // transition: visibility, opacity 0.1s linear;
+        .menu__close-btn{
+            @include phone{
+                display: block;
+            }
+        }
+    }
+    .menu__name{
+        color: $orange;
+    }
+
+    @include phone{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
