@@ -122,6 +122,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+@media screen and (max-width: 768px) {
+  .wrapper {
+    height: 100%;
+  }
+}
+
 .maincontent {
   top: 0;
   position: relative;
@@ -263,6 +269,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar__item:not(:first-child) {
   margin-top: 0.9375rem;
+}
+
+.sidebar__item--active .sidebar__link {
+  display: block;
 }
 
 .sidebar__link {

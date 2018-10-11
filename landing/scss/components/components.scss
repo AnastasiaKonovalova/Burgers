@@ -24,7 +24,11 @@
     }    
 }
 
-
+.sidebar__item--active{
+    .sidebar__link{
+        display: block; 
+    }
+}
 .sidebar__link{
     @include circle(rem(14px), transparent);
     border: 1px solid white;
@@ -34,6 +38,9 @@
     transform: translate(50%, -50%);
     display: none;
 }
+
+
+// Buttons
 
 .btn-red{
     @extend %btn;
