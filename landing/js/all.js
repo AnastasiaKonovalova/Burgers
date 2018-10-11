@@ -261,7 +261,20 @@ function touchend(t){
     };
 }
 
-document.addEventListener('touchend', debounce(touchend, 70))
+function touchmove(t){
+    var touchDeltaY = t.changedTouches[0].clientY - touchY;
+
+    if(touchDeltaY < 0){
+        const direction = 'down';
+        changeClass(direction);
+    }else {
+        const direction = 'up';
+        changeClass(direction);
+    };
+}
+
+document.addEventListener('touchmove', debounce(touchmove, 70))
+// document.addEventListener('touchend', debounce(touchend, 70))
 
 // document.addEventListener('touchend', function(t){
 //     var touchDeltaY = t.changedTouches[0].clientY - touchY;
