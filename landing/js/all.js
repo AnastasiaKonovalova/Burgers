@@ -270,16 +270,23 @@ function changeClass(d){
     };
 };
 
-var onwheelFunction = function(e){
-    const deltaY = e.deltaY;
+var mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile()
+const isTablet = mobileDetect.tablet()
 
-    if(deltaY < 0){
-        const direction = 'up';
-        changeClass(direction);
-    }else {
-        const direction = 'down';
-        changeClass(direction);
-    };
+var onwheelFunction = function(e){
+
+    if(!isMobile || !isTablet){
+        const deltaY = e.deltaY;
+
+        if(deltaY < 0){
+            const direction = 'up';
+            changeClass(direction);
+        }else {
+            const direction = 'down';
+            changeClass(direction);
+        };
+    }
 };
 
 function debounce(f, ms) {
@@ -311,7 +318,6 @@ document.addEventListener('keydown', function(k){
         changeClass(dir);
     };
 });
-
 
 
 // // One page scroll by touch
