@@ -43,13 +43,13 @@ for(i=0; i<compositions.length; i++){
 
 // Team accordeon
 const teamListEl = document.getElementById('teamList');
-const teamItemArr = document.querySelectorAll('.team__item');
+const teamItems = document.querySelectorAll('.team__item');
 
 teamListEl.addEventListener('click', function(event){
     const currentItem = event.target.parentElement;
     if(event.target.classList.contains('team__name') && !currentItem.classList.contains('active-acco')){
-        for(i=0; i<teamItemArr.length; i++){
-            teamItemArr[i].classList.remove('active-acco');
+        for(i=0; i<teamItems.length; i++){
+            teamItems[i].classList.remove('active-acco');
         };
         currentItem.classList.add('active-acco');
     } 
@@ -88,13 +88,13 @@ for(i=0; i<menuCloseMas.length; i++){
 
 
 // Comments with modal window
-const commentBtnArr = document.querySelectorAll('.comments__btn');
+const commentButtons = document.querySelectorAll('.comments__btn');
 const commentModalWindow = document.getElementById('commentModal');
 const commentName = document.getElementById('commentModalName');
 const commentText = document.getElementById('commentModalText');
 
-for(i=0; i<commentBtnArr.length; i++){
-    commentBtnArr[i].addEventListener('click', function(event){
+for(i=0; i<commentButtons.length; i++){
+    commentButtons[i].addEventListener('click', function(event){
         let spanFrom = event.currentTarget.parentElement.querySelector('.comments__name');
         let pFrom = event.currentTarget.parentElement.querySelector('.comments__text');
         
@@ -112,6 +112,28 @@ commentModalWindow.addEventListener('click', function(event){
 
 const commentModalCloseEl = document.getElementById('commentModalClose');
 commentModalCloseEl.addEventListener('click', removeClass('commentModal','modal--visible'));
+
+// Comments content by click
+
+const commentItems = document.querySelectorAll('.comments__item');
+const commentContentBlocks = document.querySelectorAll('.comments__content');
+
+for(i=0; i<commentItems.length; i++){
+    commentItems[i].addEventListener('click', function(e){
+        var currentContentBlock = e.target.firstElementChild;
+
+        for( a = 0; a < commentContentBlocks.length; a++){
+            commentContentBlocks[a].classList.remove('comments__content--visible');
+        };
+
+        if(currentContentBlock.classList ===null){
+            return
+        }else if(currentContentBlock.classList.contains('comments__content')){
+            currentContentBlock.classList.add('comments__content--visible');
+        };
+    });
+};
+
 
 
 // Slider!!!
@@ -203,14 +225,20 @@ const sidebarItemsArray = [].slice.call(sidebarItems);
 const redBtnLinks = document.querySelectorAll('.link-btn--red');
 const redBtnLinksArray = [].slice.call(redBtnLinks);
 
-const allNavArray = [].concat(navLinksArray, sidebarLinksArray, redBtnLinksArray);
+const scrollLinkArrow = document.querySelector('.scroll__link');
 
+const allNavArray = [].concat(navLinksArray, sidebarLinksArray, redBtnLinksArray);
+allNavArray.push(scrollLinkArrow);
+console.log(allNavArray)
 
 
 if(isDesktop){
         for(i=0; i<allNavArray.length; i++){
         allNavArray[i].addEventListener('click', function(e){
             e.preventDefault();
+
+            removeClass('navigation', 'tablet-hide');
+
             var visibleSection = document.querySelector('.visible-section');
             var currentSidebarItem = document.querySelector('.sidebar__item--active');
         

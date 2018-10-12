@@ -668,8 +668,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.scroll {
+.scroll__link {
   margin-bottom: 1.875rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -1797,6 +1798,11 @@ h1, h2, h3, h4, h5, h6 {
     -ms-flex-align: center;
     align-items: center;
   }
+}
+
+.comments__content--visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .comments__name {
