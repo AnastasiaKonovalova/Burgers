@@ -268,12 +268,12 @@ if(isDesktop){
     };
 };
 
-if(!isDesktop){
-    for(i=0; i<navLinksArray.length; i++){
-        navLinksArray[i].addEventListener('click', addClass('navigation', 'tablet-hide'));
-        navLinksArray[i].addEventListener('click', addClass('navClose', 'display-none'));
-    }
-}
+for(i=0; i<navLinksArray.length; i++){
+    navLinksArray[i].addEventListener('click', function(e){
+        addClass('navigation', 'tablet-hide');
+        addClass('navClose', 'display-none');
+    });
+};
 
 
 function transform(i){
