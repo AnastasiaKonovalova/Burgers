@@ -285,8 +285,8 @@ console.log(isTablet)
 
 var onwheelFunction = function(e){
     const deltaY = e.deltaY;
-
-    if(deltaY < 0){
+    if(e.ctrlKey === true){return};
+        if(deltaY < 0){
         const direction = 'up';
         changeClass(direction);
     }else {
@@ -313,7 +313,7 @@ function debounce(f, ms) {
 };
 
 if(isDesktop){
-  
+    
     document.onwheel = debounce(onwheelFunction, 70);
 
     document.addEventListener('keydown', function(k){

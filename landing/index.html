@@ -698,40 +698,40 @@
             <section class="order" id="order">
                 <div class="order__container container">
                     <h2 class="order__title">Закажите доставку</h2>
-                    <form action="" class="form main">
+                    <form id="orderForm" action="./server.php" method="POST" class="form main">
                         <div class="form__column">
                             <div class="form__row">
                                 <div class="form__block">
                                     <label class="form__label" for="name">Имя</label>
-                                    <input class="form__input form__input--name" type="text" id="name">
+                                    <input name="user-name" class="form__input form__input--name" required type="text" id="name">
                                 </div>
                                 <div class="form__block">
                                     <label class="form__label" for="tel">Телефон</label>
-                                    <input class="form__input form__input--tel" type="tel" id="tel">
+                                    <input name="user-tel" class="form__input form__input--tel" type="tel" id="tel">
                                 </div>
                             </div>
                             <div class="form__row">
                                 <div class="form__block">
                                     <label class="form__label" for="street">Улица</label>
-                                    <input class="form__input form__input--street" type="text" id="street">
+                                    <input name="street" class="form__input form__input--street" required type="text" id="street">
                                 </div>
                             </div>
                             <div class="form__row">
                                 <div class="form__block">
                                     <label class="form__label" for="building">Дом</label>
-                                    <input class="form__input form__input--building" type="text" id="building">
+                                    <input name="building" class="form__input form__input--building" required type="text" id="building">
                                 </div>
                                 <div class="form__block">
                                     <label class="form__label" for="home">Корпус</label>
-                                    <input class="form__input form__input--home" type="text" id="home">
+                                    <input name="building-index" class="form__input form__input--home" type="text" id="home">
                                 </div>
                                 <div class="form__block">
                                     <label class="form__label" for="flat">Квартира</label>
-                                    <input class="form__input form__input--flat" type="text" id="flat">
+                                    <input name="flat" class="form__input form__input--flat" required type="text" id="flat">
                                 </div>
                                 <div class="form__block">
                                     <label class="form__label" for="floor">Этаж</label>
-                                    <input class="form__input form__input--floor" type="text" id="floor">
+                                    <input name="floor" class="form__input form__input--floor" required type="text" id="floor">
                                 </div>
                             </div>
                         </div>
@@ -739,28 +739,28 @@
                             <div class="form__row">
                                 <div class="form__block">
                                     <label class="form__label" for="comment">Комментарий</label>
-                                    <textarea class="form__textarea" name="" id="comment"></textarea>
+                                    <textarea class="form__textarea" name="user-comment" id="comment"></textarea>
                                 </div>
                             </div>
                             <div class="form__row form__row--centered">
                                 <div class="radio__block">
-                                    <input class="form__radio" type="radio" name="pay" id="change">
+                                    <input class="form__radio" type="radio" name="pay" id="change" value="Наличными со сдачей">
                                     <div class="radio__styled"></div>
                                     <label class="form__label radio__label" for="change">Потребуется сдача</label>
                                 </div>
                                 <div class="radio__block">
-                                    <input class="form__radio" type="radio" name="pay" id="card">
+                                    <input class="form__radio" type="radio" name="pay" id="card" value="Картой">
                                     <div class="radio__styled"></div>
                                     <label class="form__label radio__label" for="card">Оплата по карте</label>
                                 </div>
                             </div>
                             <div class="form__row form__row--centered radio__block">
-                                <input class="form__checkbox" type="checkbox" id="nocall">
+                                <input class="form__checkbox" type="checkbox" id="nocall" name="nocall" value="1">
                                 <div class="checkbox__styled"></div>
                                 <label class="form__label checkbox__label" for="nocall">Не перезванивать</label>
                             </div>
                             <div class="form__row form__row--centered">
-                                <button class="btn-red link-btn--red" type="submit">Заказать</button>
+                                <button class="btn-red" type="submit">Заказать</button>
                                 <button class="btn-reset form__reset" type="reset">Очистить</button>
                             </div>
                         </div>
@@ -769,6 +769,7 @@
             </section>
 
             <section class="contacts" id="contacts">
+                <div id="map" class="map"></div>
                 <footer class="contacts__footer footer">
                     <div class="footer__container container">
                         <div class="footer__column">
@@ -859,6 +860,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>    
     <script src="./js/all.js"></script>
+    <script src="./js/map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGghItVCkQN6GuukUi-_4m2dULdIfXceY&callback=initMap"></script>
 
 </body>
 </html>
