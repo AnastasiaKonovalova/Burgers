@@ -5,6 +5,10 @@ function removeClass(id, nameOfClass){
         elem.classList.remove(nameOfClass);
     };
 };
+function addClass(id, nameOfClass){
+        let elem = document.getElementById(id);
+        elem.classList.add(nameOfClass);
+};
 function toggleClass(id, nameOfClass){
     return function(){
         let elem = document.getElementById(id);
@@ -237,7 +241,8 @@ if(isDesktop){
         allNavArray[i].addEventListener('click', function(e){
             e.preventDefault();
 
-            removeClass('navigation', 'tablet-hide');
+            addClass('navigation', 'tablet-hide');
+            addClass('navClose', 'display-none');
 
             var visibleSection = document.querySelector('.visible-section');
             var currentSidebarItem = document.querySelector('.sidebar__item--active');
@@ -262,6 +267,14 @@ if(isDesktop){
         });
     };
 };
+
+if(!isDesktop){
+    for(i=0; i<navLinksArray.length; i++){
+        navLinksArray[i].addEventListener('click', addClass('navigation', 'tablet-hide'));
+        navLinksArray[i].addEventListener('click', addClass('navClose', 'display-none'));
+    }
+}
+
 
 function transform(i){
     const newPosition = i * -100 +'%';
