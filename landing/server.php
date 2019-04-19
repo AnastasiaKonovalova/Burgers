@@ -37,7 +37,7 @@
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-type: text/html; charset=UTF-8" . "\r\n";
 
-    // $mail = mail('konovalova.anast@gmail.com', 'Заказ бургеры', $mail_message, $headers);
+    $mail = mail('silentium90@mail.ru', 'Заказ бургеры', $mail_message, $headers);
 
     // $data = [];
 

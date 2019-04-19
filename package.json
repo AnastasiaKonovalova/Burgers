@@ -1,0 +1,21 @@
+{
+  "name": "burgers",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "description": "First adaptive project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaKonovalova/Burgers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaKonovalova/Burgers/issues"
+  },
+  "homepage": "https://github.com/AnastasiaKonovalova/Burgers#readme"
+}
