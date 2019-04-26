@@ -1,6 +1,7 @@
 # Лендинг для бургер-бара
 
 Адаптивная верстка, one-page scroll.
+
 Ссылка на Github Pages: https://anastasiakonovalova.github.io/burgers/landing/index.html
 
 ## Технологии
